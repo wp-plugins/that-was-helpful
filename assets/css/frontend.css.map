@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,uBAAwB;EACvB,OAAO,EAAE,YAAY;EACrB,cAAc,EAAE,MAAM;;;AAKtB,0DACQ;EACP,YAAY,EAAE,IAAI;EAClB,UAAU,EAAE,IAAI;;AAKhB,wEACQ;EACP,UAAU,EAAE,IAAI;;;ACjBnB,wBAAyB;EACxB,cAAc,EAAE,MAAM",
+"sources": ["../../../resources/scss/partials/frontend/_form.scss","../../../resources/scss/partials/frontend/_votes.scss"],
+"names": [],
+"file": "frontend.css"
+}
