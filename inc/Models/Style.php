@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Models;
+namespace tfrommen\ThatWasHelpful\Models;
 
 /**
- * Class Style
+ * Style model.
  *
- * @package tf\ThatWasHelpful\Models
+ * @package tfrommen\ThatWasHelpful\Models
  */
 class Style {
 
@@ -20,7 +20,7 @@ class Style {
 	private $state;
 
 	/**
-	 * Constructor. Set up the properties.
+	 * Constructor. Sets up the properties.
 	 *
 	 * @param string $file  Main plugin file.
 	 * @param State  $state State model.
@@ -33,7 +33,7 @@ class Style {
 	}
 
 	/**
-	 * Enqueue the script file.
+	 * Enqueues the script file.
 	 *
 	 * @wp-hook wp_footer
 	 *

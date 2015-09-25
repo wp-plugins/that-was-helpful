@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Models;
+namespace tfrommen\ThatWasHelpful\Models;
 
 /**
- * Class Option
+ * Option model.
  *
- * @package tf\ThatWasHelpful\Models
+ * @package tfrommen\ThatWasHelpful\Models
  */
 class Option {
 
@@ -15,7 +15,7 @@ class Option {
 	private static $name = 'that_was_helpful';
 
 	/**
-	 * Return the option name.
+	 * Returns the option name.
 	 *
 	 * @return string
 	 */
@@ -25,7 +25,7 @@ class Option {
 	}
 
 	/**
-	 * Return the option value.
+	 * Returns the option value.
 	 *
 	 * @return array
 	 */
@@ -35,7 +35,7 @@ class Option {
 	}
 
 	/**
-	 * Update the option to the given value.
+	 * Updates the option to the given value.
 	 *
 	 * @param array $value New option value.
 	 *

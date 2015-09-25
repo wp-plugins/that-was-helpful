@@ -1,14 +1,14 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Controllers;
+namespace tfrommen\ThatWasHelpful\Controllers;
 
-use tf\ThatWasHelpful\Models;
-use tf\ThatWasHelpful\Views\Votes as View;
+use tfrommen\ThatWasHelpful\Models;
+use tfrommen\ThatWasHelpful\Views\Votes as View;
 
 /**
- * Class Votes
+ * Votes controller.
  *
- * @package tf\ThatWasHelpful\Controllers
+ * @package tfrommen\ThatWasHelpful\Controllers
  */
 class Votes {
 
@@ -18,7 +18,7 @@ class Votes {
 	private $view;
 
 	/**
-	 * Constructor. Set up the properties.
+	 * Constructor. Sets up the properties.
 	 *
 	 * @param View $view View.
 	 */
@@ -28,7 +28,7 @@ class Votes {
 	}
 
 	/**
-	 * Wire up all functions.
+	 * Wires up all functions.
 	 *
 	 * @return void
 	 */
@@ -40,7 +40,7 @@ class Votes {
 	}
 
 	/**
-	 * According to the stored settings, maybe add filters for appending the votes' HTML to the content and/or excerpt.
+	 * According to the stored settings, maybe adds filters for appending the votes HTML to the content and/or excerpt.
 	 *
 	 * @return void
 	 */

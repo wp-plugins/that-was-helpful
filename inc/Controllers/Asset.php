@@ -1,14 +1,14 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Controllers;
+namespace tfrommen\ThatWasHelpful\Controllers;
 
-use tf\ThatWasHelpful\Models\Script;
-use tf\ThatWasHelpful\Models\Style;
+use tfrommen\ThatWasHelpful\Models\Script;
+use tfrommen\ThatWasHelpful\Models\Style;
 
 /**
- * Class Asset
+ * Asset controller.
  *
- * @package tf\ThatWasHelpful\Controllers
+ * @package tfrommen\ThatWasHelpful\Controllers
  */
 class Asset {
 
@@ -23,7 +23,7 @@ class Asset {
 	private $style;
 
 	/**
-	 * Constructor. Set up the properties.
+	 * Constructor. Sets up the properties.
 	 *
 	 * @param Script $script Script model.
 	 * @param Style  $style  Style model.
@@ -36,7 +36,7 @@ class Asset {
 	}
 
 	/**
-	 * Wire up all functions.
+	 * Wires up all functions.
 	 *
 	 * @return void
 	 */

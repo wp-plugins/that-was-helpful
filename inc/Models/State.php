@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Models;
+namespace tfrommen\ThatWasHelpful\Models;
 
 /**
- * Class State
+ * State model.
  *
- * @package tf\ThatWasHelpful\Models
+ * @package tfrommen\ThatWasHelpful\Models
  */
 class State {
 
@@ -15,7 +15,7 @@ class State {
 	private $is_active = FALSE;
 
 	/**
-	 * Set the state to 'active'.
+	 * Sets the state to 'active'.
 	 *
 	 * @return void
 	 */
@@ -25,7 +25,7 @@ class State {
 	}
 
 	/**
-	 * Return whether the state is 'active'.
+	 * Returns whether the state is 'active'.
 	 *
 	 * @return bool
 	 */

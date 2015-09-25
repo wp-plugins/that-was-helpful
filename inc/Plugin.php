@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful;
+namespace tfrommen\ThatWasHelpful;
 
 /**
- * Class Plugin
+ * Main controller.
  *
- * @package tf\ThatWasHelpful
+ * @package tfrommen\ThatWasHelpful
  */
 class Plugin {
 
@@ -15,23 +15,42 @@ class Plugin {
 	private $file;
 
 	/**
-	 * Constructor. Set up the properties.
+	 * @var string
+	 */
+	private $plugin_data;
+
+	/**
+	 * Constructor. Sets up the properties.
 	 *
 	 * @param string $file Main plugin file.
 	 */
 	public function __construct( $file ) {
 
 		$this->file = $file;
+
+		$headers = array(
+			'version'     => 'Version',
+			'text_domain' => 'Text Domain',
+			'domain_path' => 'Domain Path',
+		);
+		$this->plugin_data = get_file_data( $file, $headers );
 	}
 
 	/**
-	 * Initialize the plugin.
+	 * Initializes the plugin.
 	 *
 	 * @return void
 	 */
 	public function initialize() {
 
-		$text_domain = new Models\TextDomain( $this->file );
+		$update_controller = new Controllers\Update( $this->plugin_data[ 'version' ] );
+		$update_controller->update();
+
+		$text_domain = new Models\TextDomain(
+			$this->file,
+			$this->plugin_data[ 'text_domain' ],
+			$this->plugin_data[ 'domain_path' ]
+		);
 		$text_domain->load();
 
 		$state = new Models\State();

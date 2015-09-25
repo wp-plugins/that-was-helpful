@@ -1,6 +1,6 @@
 var Plugin = Plugin || {};
 
-/* global jQuery, tfThatWasHelpfulData */
+/* global Plugin, jQuery, tfThatWasHelpfulData */
 ;( function( Plugin, $, pluginData ) {
 	"use strict";
 

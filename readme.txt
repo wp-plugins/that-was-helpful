@@ -1,12 +1,9 @@
 === That Was Helpful ===
-Contributors: ipm-frommen
-Donate link: http://ipm-frommen.de/wordpress
-Tags: vote, posts, helpful, quality
+Contributors: tfrommen
+Tags: helpful, posts, quality, vote
 Requires at least: 3.5.0
-Tested up to: 4.2.4
+Tested up to: 4.3.1
 Stable tag: trunk
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Find out what posts logged-in users found helpful.
 
@@ -14,7 +11,7 @@ Find out what posts logged-in users found helpful.
 
 **Find out what posts logged-in users found helpful.**
 
-Have you ever wanted to know about the quality your posts? At least a little bit?
+Have you ever wanted to know about the quality of your posts? At least a little bit?
 
 This is exactly when _That Was Helpful_ kicks in.
 
@@ -26,7 +23,7 @@ What this plugin is all about is providing a means to mark individual posts help
 
 **Actions**
 
-In case you want to show the form depending on some (complicated) condition (and not always), simply wrap `do_action( 'that_was_helpful', $optional_post_id )` in the condition, and put it in you desired template file(s). If you provide an existing post ID as parameter, the according post's votes are displayed. Otherwise the current post is used.
+In case you want to show the form depending on some (complicated) condition (and not always), simply wrap `do_action( 'that_was_helpful', $optional_post_id )` in the condition, and put it in your desired template file(s). If you provide an existing post ID as parameter, the according post's votes are displayed. Otherwise the current post is used.
 
 **Filters**
 
@@ -38,7 +35,7 @@ Managing the plugin's settings is restricted to a certain capability, which is b
 
 `
 /**
- * Filter the capability required to manage the settings.
+ * Filters the capability required to manage the settings.
  *
  * @param string $capability Capability required to manage the settings.
  */
@@ -70,6 +67,11 @@ This plugin requires PHP 5.3.
 1. **Frontend** - Frontend view for a logged-in user who marked the according post helpful.
 
 == Changelog ==
+
+= 1.1.0 =
+* Bugfix nonce method.
+* Rename namespace root to tfrommen.
+* Compatible up to WordPress 4.3.1.
 
 = 1.0.1 =
 * wordpress.org release.

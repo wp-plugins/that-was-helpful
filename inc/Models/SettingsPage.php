@@ -1,14 +1,14 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Models;
+namespace tfrommen\ThatWasHelpful\Models;
 
-use tf\ThatWasHelpful\Controllers;
-use tf\ThatWasHelpful\Views;
+use tfrommen\ThatWasHelpful\Controllers;
+use tfrommen\ThatWasHelpful\Views;
 
 /**
- * Class SettingsPage
+ * Settings page model.
  *
- * @package tf\ThatWasHelpful\Models
+ * @package tfrommen\ThatWasHelpful\Models
  */
 class SettingsPage {
 
@@ -23,12 +23,12 @@ class SettingsPage {
 	private $slug = 'that_was_helpful';
 
 	/**
-	 * Constructor. Set up the properties.
+	 * Constructor. Sets up the properties.
 	 */
 	public function __construct() {
 
 		/**
-		 * Filter the capability required to manage the settings.
+		 * Filters the capability required to manage the settings.
 		 *
 		 * @param string $capability Capability required to manage the settings.
 		 */
@@ -36,7 +36,7 @@ class SettingsPage {
 	}
 
 	/**
-	 * Return the capability required to manage the settings.
+	 * Returns the capability required to manage the settings.
 	 *
 	 * @return string
 	 */
@@ -46,7 +46,7 @@ class SettingsPage {
 	}
 
 	/**
-	 * Return the page slug.
+	 * Returns the page slug.
 	 *
 	 * @return string
 	 */

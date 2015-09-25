@@ -1,15 +1,15 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Views;
+namespace tfrommen\ThatWasHelpful\Views;
 
-use tf\ThatWasHelpful\Models\Nonce as NonceModel;
-use tf\ThatWasHelpful\Models\Post as PostModel;
-use tf\ThatWasHelpful\Models\State as StateModel;
+use tfrommen\ThatWasHelpful\Models\Nonce as NonceModel;
+use tfrommen\ThatWasHelpful\Models\Post as PostModel;
+use tfrommen\ThatWasHelpful\Models\State as StateModel;
 
 /**
- * Class Votes
+ * Votes view.
  *
- * @package tf\ThatWasHelpful\Views
+ * @package tfrommen\ThatWasHelpful\Views
  */
 class Votes {
 
@@ -29,7 +29,7 @@ class Votes {
 	private $state;
 
 	/**
-	 * Constructor. Set up class variables.
+	 * Constructor. Sets up class variables.
 	 *
 	 * @param StateModel $state State model.
 	 * @param PostModel  $post  Post model.
@@ -45,7 +45,25 @@ class Votes {
 	}
 
 	/**
-	 * Render the HTML.
+	 * Appends the rendered HTML to the given output.
+	 *
+	 * @wp-hook the_content
+	 * @wp-hook the_excerpt
+	 *
+	 * @param string $output Output.
+	 *
+	 * @return string
+	 */
+	public function append( $output ) {
+
+		ob_start();
+		$this->render();
+
+		return $output . ob_get_clean();
+	}
+
+	/**
+	 * Renders the HTML.
 	 *
 	 * @wp-hook that_was_helpful
 	 *
@@ -91,33 +109,18 @@ class Votes {
 			<span class="that-was-helpful__votes">
 				<?php
 				$string = _nx(
-					'%d visitor found that helpful.', '%d visitors found that helpful.', $data->votes,
-					'Vote description', 'that-was-helpful'
+					'%d visitor found that helpful.',
+					'%d visitors found that helpful.',
+					$data->votes,
+					'Vote description',
+					'that-was-helpful'
 				);
 				$string = esc_html( $string );
 				printf( $string, $data->votes );
 				?>
 			</span>
 		</div>
-	<?php
-	}
-
-	/**
-	 * Append the rendered HTML to the given output.
-	 *
-	 * @wp-hook the_content
-	 * @wp-hook the_excerpt
-	 *
-	 * @param string $output Output.
-	 *
-	 * @return string
-	 */
-	public function append( $output ) {
-
-		ob_start();
-		$this->render();
-
-		return $output . ob_get_clean();
+		<?php
 	}
 
 }

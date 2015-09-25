@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Models;
+namespace tfrommen\ThatWasHelpful\Models;
 
 /**
- * Class Script
+ * Script model.
  *
- * @package tf\ThatWasHelpful\Models
+ * @package tfrommen\ThatWasHelpful\Models
  */
 class Script {
 
@@ -35,7 +35,7 @@ class Script {
 	private $state;
 
 	/**
-	 * Constructor. Set up the properties.
+	 * Constructor. Sets up the properties.
 	 *
 	 * @param string $file  Main plugin file.
 	 * @param State  $state State model.
@@ -51,7 +51,7 @@ class Script {
 	}
 
 	/**
-	 * Return the action.
+	 * Returns the action.
 	 *
 	 * @return string
 	 */
@@ -61,7 +61,7 @@ class Script {
 	}
 
 	/**
-	 * Enqueue the script file.
+	 * Enqueues the script file.
 	 *
 	 * @wp-hook wp_footer
 	 *

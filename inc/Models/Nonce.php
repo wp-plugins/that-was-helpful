@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Models;
+namespace tfrommen\ThatWasHelpful\Models;
 
 /**
- * Class Nonce
+ * Nonce model.
  *
- * @package tf\ThatWasHelpful\Models
+ * @package tfrommen\ThatWasHelpful\Models
  */
 class Nonce {
 
@@ -20,7 +20,7 @@ class Nonce {
 	private $name;
 
 	/**
-	 * Constructor. Set up the properties.
+	 * Constructor. Sets up the properties.
 	 *
 	 * @param string $action Nonce action.
 	 * @param string $name   Optional. Nonce name. Defaults to '{$action}_nonce'.
@@ -28,11 +28,12 @@ class Nonce {
 	public function __construct( $action, $name = '' ) {
 
 		$this->action = $action;
-		$this->name = empty( $name ) ? $action . '_nonce' : $name;
+
+		$this->name = empty( $name ) ? "{$action}_nonce" : $name;
 	}
 
 	/**
-	 * Return the nonce action.
+	 * Returns the nonce action.
 	 *
 	 * @return string
 	 */
@@ -42,7 +43,7 @@ class Nonce {
 	}
 
 	/**
-	 * Return the nonce name.
+	 * Returns the nonce name.
 	 *
 	 * @return string
 	 */
@@ -52,7 +53,7 @@ class Nonce {
 	}
 
 	/**
-	 * Return the nonce value.
+	 * Returns the nonce value.
 	 *
 	 * @param string $action Optional. Nonce action. Defaults to the default action.
 	 *
@@ -66,7 +67,20 @@ class Nonce {
 	}
 
 	/**
-	 * Return the input element for the nonce. Unless $referer is set to FALSE, a referer input is returned, too.
+	 * Prints the input element for the nonce. Unless $referer is set to FALSE, a referer input is printed, too.
+	 *
+	 * @param string $action  Optional. Nonce action. Defaults to the default action.
+	 * @param bool   $referer Optional. Print the referer field? Defaults to TRUE.
+	 *
+	 * @return void
+	 */
+	public function print_field( $action = '', $referer = TRUE ) {
+
+		$this->get_field( $action, $referer, TRUE );
+	}
+
+	/**
+	 * Returns the input element for the nonce. Unless $referer is set to FALSE, a referer input is returned, too.
 	 *
 	 * @param string $action  Optional. Nonce action. Defaults to the default action.
 	 * @param bool   $referer Optional. Print the referer field? Defaults to TRUE.
@@ -82,20 +96,7 @@ class Nonce {
 	}
 
 	/**
-	 * Print the input element for the nonce. Unless $referer is set to FALSE, a referer input is printed, too.
-	 *
-	 * @param string $action  Optional. Nonce action. Defaults to the default action.
-	 * @param bool   $referer Optional. Print the referer field? Defaults to TRUE.
-	 *
-	 * @return void
-	 */
-	public function print_field( $action = '', $referer = TRUE ) {
-
-		$this->get_field( $action, $this->name, $referer, TRUE );
-	}
-
-	/**
-	 * Check if the given nonce is valid. If no nonce is given, the according field of the $_REQUEST superglobal is
+	 * Checks if the given nonce is valid. If no nonce is given, the according field of the $_REQUEST superglobal is
 	 * checked.
 	 *
 	 * @param string $nonce  Optional. Nonce value. Defaults to the request value with the key being the nonce name.

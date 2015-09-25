@@ -1,14 +1,14 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Controllers;
+namespace tfrommen\ThatWasHelpful\Controllers;
 
-use tf\ThatWasHelpful\Models\Settings as Model;
-use tf\ThatWasHelpful\Views\SettingsPage as View;
+use tfrommen\ThatWasHelpful\Models\Settings as Model;
+use tfrommen\ThatWasHelpful\Views\SettingsPage as View;
 
 /**
- * Class Settings
+ * Settings controller.
  *
- * @package tf\ThatWasHelpful\Controllers
+ * @package tfrommen\ThatWasHelpful\Controllers
  */
 class Settings {
 
@@ -23,7 +23,7 @@ class Settings {
 	private $view;
 
 	/**
-	 * Constructor. Set up the properties.
+	 * Constructor. Sets up the properties.
 	 *
 	 * @param Model $model Settings model.
 	 * @param View  $view  Settings page view.
@@ -36,7 +36,7 @@ class Settings {
 	}
 
 	/**
-	 * Wire up all functions.
+	 * Wires up all functions.
 	 *
 	 * @return void
 	 */

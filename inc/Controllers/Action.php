@@ -1,13 +1,13 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Controllers;
+namespace tfrommen\ThatWasHelpful\Controllers;
 
-use tf\ThatWasHelpful\Models\Post as PostModel;
+use tfrommen\ThatWasHelpful\Models\Post as PostModel;
 
 /**
- * Class Action
+ * Action controller.
  *
- * @package tf\ThatWasHelpful\Controllers
+ * @package tfrommen\ThatWasHelpful\Controllers
  */
 class Action {
 
@@ -17,7 +17,7 @@ class Action {
 	private $post;
 
 	/**
-	 * Constructor. Set up the properties.
+	 * Constructor. Sets up the properties.
 	 *
 	 * @param PostModel $post Post model.
 	 */
@@ -27,7 +27,7 @@ class Action {
 	}
 
 	/**
-	 * Wire up all functions.
+	 * Wires up all functions.
 	 *
 	 * @return void
 	 */

@@ -1,16 +1,16 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Models;
+namespace tfrommen\ThatWasHelpful\Models;
 
 /**
- * Class Settings
+ * Settings model.
  *
- * @package tf\ThatWasHelpful\Models
+ * @package tfrommen\ThatWasHelpful\Models
  */
 class Settings {
 
 	/**
-	 * Register the settings.
+	 * Registers the settings.
 	 *
 	 * @wp-hook admin_init
 	 *
@@ -27,7 +27,7 @@ class Settings {
 	}
 
 	/**
-	 * Sanitize the settings data.
+	 * Sanitizes the settings data.
 	 *
 	 * @param array $data Settings data.
 	 *

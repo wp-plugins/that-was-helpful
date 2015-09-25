@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\Autoloader;
+namespace tfrommen\Autoloader;
 
 /**
- * Class Autoloader
+ * Autoloader class.
  *
- * @package tf\Autoloader
+ * @package tfrommen\Autoloader
  */
 class Autoloader {
 
@@ -15,7 +15,7 @@ class Autoloader {
 	private $rules = array();
 
 	/**
-	 * Constructor. Register to the spl autoload stack.
+	 * Constructor. Registers to the spl autoload stack.
 	 */
 	public function __construct() {
 
@@ -23,7 +23,7 @@ class Autoloader {
 	}
 
 	/**
-	 * Add an autoloader rule.
+	 * Adds an autoloader rule.
 	 *
 	 * @param Rule $rule Autoloader rule object.
 	 *
@@ -31,11 +31,11 @@ class Autoloader {
 	 */
 	public function add_rule( Rule $rule ) {
 
-		$this->rules[ ] = $rule;
+		$this->rules[] = $rule;
 	}
 
 	/**
-	 * Load a class or an interface.
+	 * Loads a class or an interface.
 	 *
 	 * @param string $name Class or interface name.
 	 *

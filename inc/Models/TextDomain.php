@@ -1,18 +1,18 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Models;
+namespace tfrommen\ThatWasHelpful\Models;
 
 /**
- * Class TextDomain
+ * Text domain model.
  *
- * @package tf\ThatWasHelpful\Models
+ * @package tfrommen\ThatWasHelpful\Models
  */
 class TextDomain {
 
 	/**
 	 * @var string
 	 */
-	private $domain = 'that-was-helpful';
+	private $domain;
 
 	/**
 	 * @var string
@@ -20,18 +20,22 @@ class TextDomain {
 	private $path;
 
 	/**
-	 * Constructor. Set up the properties.
+	 * Constructor. Sets up the properties.
 	 *
-	 * @param string $file Main plugin file.
+	 * @param string $file   Main plugin file.
+	 * @param string $domain Text domain name.
+	 * @param string $path   Text domain path.
 	 */
-	public function __construct( $file ) {
+	public function __construct( $file, $domain, $path ) {
+
+		$this->domain = $domain;
 
 		$this->path = plugin_basename( $file );
-		$this->path = dirname( $this->path ) . '/languages';
+		$this->path = dirname( $this->path ) . $path;
 	}
 
 	/**
-	 * Load the text domain.
+	 * Loads the text domain.
 	 *
 	 * @return bool
 	 */

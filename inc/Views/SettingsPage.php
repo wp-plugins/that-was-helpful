@@ -1,14 +1,14 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ThatWasHelpful\Views;
+namespace tfrommen\ThatWasHelpful\Views;
 
-use tf\ThatWasHelpful\Models;
-use tf\ThatWasHelpful\Models\SettingsPage as Model;
+use tfrommen\ThatWasHelpful\Models;
+use tfrommen\ThatWasHelpful\Models\SettingsPage as Model;
 
 /**
- * Class SettingsPage
+ * Settings page view.
  *
- * @package tf\ThatWasHelpful\Views
+ * @package tfrommen\ThatWasHelpful\Views
  */
 class SettingsPage {
 
@@ -23,7 +23,7 @@ class SettingsPage {
 	private $title;
 
 	/**
-	 * Constructor. Set up the properties.
+	 * Constructor. Sets up the properties.
 	 *
 	 * @param Model $model Model.
 	 */
@@ -35,7 +35,7 @@ class SettingsPage {
 	}
 
 	/**
-	 * Add the settings page to the Settings menu.
+	 * Adds the settings page to the Settings menu.
 	 *
 	 * @wp-hook admin_menu
 	 *
@@ -54,7 +54,7 @@ class SettingsPage {
 	}
 
 	/**
-	 * Render the HTML.
+	 * Renders the HTML.
 	 *
 	 * @return void
 	 */
@@ -88,9 +88,10 @@ class SettingsPage {
 									<input name="<?php echo "{$option_name}[{$name}]"; ?>" type="checkbox" value="1"
 										id="<?php echo $id; ?>" <?php checked( ! empty( $option[ $name ] ) ); ?>>
 									<?php
-									$string = esc_html_x(
+									/* translators: %s: Priority input element HTML */
+									$string = esc_html__(
 										'Automatically append to content with priority %s',
-										'%s = Priority input element', 'that-was-helpful'
+										'that-was-helpful'
 									);
 
 									$id .= '-priority';
@@ -113,9 +114,10 @@ class SettingsPage {
 									<input name="<?php echo "{$option_name}[{$name}]"; ?>" type="checkbox" value="1"
 										id="<?php echo $id; ?>" <?php checked( ! empty( $option[ $name ] ) ); ?>>
 									<?php
-									$string = esc_html_x(
+									/* translators: %s: Priority input element HTML */
+									$string = esc_html__(
 										'Automatically append to excerpt with priority %s',
-										'%s = Priority input element', 'that-was-helpful'
+										'that-was-helpful'
 									);
 
 									$id .= '-priority';
